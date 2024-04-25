@@ -45,10 +45,10 @@ public class TxLevelTest {
         }
 
         private void printTxInfo() {
-            boolean txActive = TransactionSynchronizationManager.isActualTransactionActive();
+            boolean txActive = TransactionSynchronizationManager.isActualTransactionActive(); // 현재 쓰레드에 트랜잭션이 적용되어 있는가?
             log.info("tx active={}", txActive);
 
-            boolean readOnly = TransactionSynchronizationManager.isCurrentTransactionReadOnly();
+            boolean readOnly = TransactionSynchronizationManager.isCurrentTransactionReadOnly(); // 현재 트랜잭션에 적용된 readonly 옵션 값 체크
             log.info("tx readOnly={}", readOnly);
         }
     }
